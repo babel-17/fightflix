@@ -12,3 +12,7 @@ export async function getById(id) {
 export function create(fightData) {
   return sendRequest(BASE_URL, 'POST', {fightData});
 }
+
+export function update(id, fightData) {
+  return sendRequest(`${BASE_URL}/${id}`, 'POST', {fightData});
+};

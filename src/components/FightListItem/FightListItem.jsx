@@ -1,4 +1,5 @@
 import './FightListItem.css';
+import { Link } from 'react-router-dom';
 
 export default function FightListItem({ fightItem }) {
   return (
@@ -6,9 +7,10 @@ export default function FightListItem({ fightItem }) {
       {/* <div className="emoji flex-ctr-ctr">{fightItem.emoji}</div> */}
       <div className="name">{fightItem.name}</div>
       <div className="buy">
-        <button className="btn-sm" onClick={() => console.log('clicked')}>
-          ADD
+       <Link to={`/fights/${fightItem._id}/edit`}><button className="btn-sm" >
+          EDIT
         </button>
+        </Link>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import FightHistoryPage from '../FightHistoryPage/FightHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import NewFightPage from '../NewFightPage/NewFightPage';
 import FightList from '../../components/FightList/FightList';
+import EditPage from '../EditPage/EditPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -20,6 +21,8 @@ export default function App() {
           {/* Route components in here */}
           <Route path="/fights/new" element={<NewFightPage user={user} setUser={setUser} />} />
           <Route path="/fights" element={<FightList />} />
+          <Route path="/fights/:id/edit" element={<EditPage />} />
+
         </Routes>
       
         :

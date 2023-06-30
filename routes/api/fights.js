@@ -7,5 +7,6 @@ const fightsCtrl = require('../../controllers/api/fights');
 router.get('/', ensureLoggedIn, fightsCtrl.index);
 router.get('/:id', ensureLoggedIn, fightsCtrl.show);
 router.post('/', ensureLoggedIn, fightsCtrl.create);
+router.post('/:id', ensureLoggedIn, fightsCtrl.update);
 
 module.exports = router;

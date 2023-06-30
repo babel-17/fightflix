@@ -1,7 +1,7 @@
 const Fight = require('../../models/fight');
 
 module.exports = {
-    create, index, show
+    create, index, show, update
 };
 
 async function create(req, res) {
@@ -22,5 +22,12 @@ async function index(req, res) {
 
 async function show(req, res) {
     const fight = await Fight.findById(req.params.id);
+    res.json(fight);
+};
+
+async function update(req, res) {
+    console.log(req.body);
+    console.log(req.params.id);
+    const fight = await Fight.findByIdAndUpdate(req.params.id, req.body.fightData, {new: true});
     res.json(fight);
 };
