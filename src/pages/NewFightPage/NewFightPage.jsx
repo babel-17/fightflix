@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 export default function NewFightPage() {
   const navigate = useNavigate();
   const [fight, setFight] = useState({
-    title: '',
+    name: '',
     description: '',
     date: '',
   });
@@ -25,8 +25,8 @@ export default function NewFightPage() {
   return (
     <>
     <h1>NewFightPage</h1>
-    <input name="title" value={fight.title} onChange={handleChange}></input>
-    <input name="date" value={fight.date} onChange={handleChange}></input>
+    <input name="name" value={fight.name} onChange={handleChange}></input>
+    <input name="date" type="date" value={fight.date} onChange={handleChange}></input>
     <input name="description" value={fight.description} onChange={handleChange}></input>
     <button onClick={handleSubmit}>Create</button>
     </>

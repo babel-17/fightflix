@@ -1,16 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+require('./category');
 
-const fightSchema = new Schema({
-    date: {
-        type : String
-    },
-    title: {
-        type : String
-    },
-    description: {
-        type : String
-    },
-});
+const fightSchema = require('./fightSchema');
 
-module.exports = mongoose.model('Fight', fightSchema);
+module.exports = mongoose.model('Fight', fightSchema); 
