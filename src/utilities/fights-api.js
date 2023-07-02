@@ -16,3 +16,7 @@ export function create(fightData) {
 export function update(id, fightData) {
   return sendRequest(`${BASE_URL}/${id}`, 'POST', {fightData});
 };
+
+export function deleteFight(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}

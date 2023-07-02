@@ -1,7 +1,7 @@
 const Fight = require('../../models/fight');
 
 module.exports = {
-    create, index, show, update
+    create, index, show, update, delete: deleteFight
 };
 
 async function create(req, res) {
@@ -30,4 +30,14 @@ async function update(req, res) {
     console.log(req.params.id);
     const fight = await Fight.findByIdAndUpdate(req.params.id, req.body.fightData, {new: true});
     res.json(fight);
+};
+
+async function deleteFight(req, res) {
+    try{
+        const deletedFight = await Fight.findByIdAndRemove(req.params.id);
+        res.json(deletedFight);
+    } catch (err){
+        console.log(err);
+        res.json({err});
+    };
 };

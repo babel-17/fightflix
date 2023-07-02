@@ -8,5 +8,6 @@ router.get('/', ensureLoggedIn, fightsCtrl.index);
 router.get('/:id', ensureLoggedIn, fightsCtrl.show);
 router.post('/', ensureLoggedIn, fightsCtrl.create);
 router.post('/:id', ensureLoggedIn, fightsCtrl.update);
+router.delete('/:id', ensureLoggedIn, fightsCtrl.delete);
 
 module.exports = router;

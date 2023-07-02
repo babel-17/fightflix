@@ -22,6 +22,7 @@ export default function App() {
           <Route path="/fights/new" element={<NewFightPage user={user} setUser={setUser} />} />
           <Route path="/fights" element={<FightList />} />
           <Route path="/fights/:id/edit" element={<EditPage />} />
+          {/* <Route path="/fights/:id/delete" element={<EditPage />} /> */}
 
         </Routes>
       

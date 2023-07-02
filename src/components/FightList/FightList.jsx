@@ -5,6 +5,7 @@ import { useState } from 'react';
 import * as fightsAPI from '../../utilities/fights-api';
 
 export default function FightList() {
+  
   const [fightItems, setFightItems] = useState([]);
   useEffect(() => {
     async function getFightItems() {
@@ -14,10 +15,19 @@ export default function FightList() {
     }
     getFightItems();
   }, []);
+  
+  const handleDelete = (id) => {
+    fightsAPI.deleteFight(id).then(() => {
+      const newFightItems = fightItems.filter(fight => fight._id !== id);
+      setFightItems(newFightItems);
+    });
+  };
+
   const items = fightItems.map(item =>
     <FightListItem
       key={item._id}
       fightItem={item}
+      handleDelete={handleDelete}
     />
   );
   console.log(fightItems);
@@ -26,4 +36,6 @@ export default function FightList() {
       {items}
     </main>
   );
+
+  
 }
