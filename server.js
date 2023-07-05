@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const multer = require('multer');
+const upload = multer();
 // Always require and configure near the top
 require('dotenv').config();
 // Connect to the database
@@ -28,6 +30,7 @@ app.use('/api/users', require('./routes/api/users'));
 
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/fights', ensureLoggedIn, require('./routes/api/fights'));
+app.use('/api/videos', ensureLoggedIn, require('./routes/api/videos'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests

@@ -66,6 +66,7 @@ export default function EditPage(props) {
             onChange={handleChange}
             />
             <button className='edit-button'>Submit</button>
+            <button className='delete-button'>Delete</button>
         </form>
         </div>
     )
