@@ -33,6 +33,8 @@ With an extensive range of categories, from martial arts and boxing to street fi
 ## Project Initialization
 Trello: https://trello.com/b/c7DTPnBk/netflix-clone
 
+Heroku: https://fightflix-7d5f45c48db1.herokuapp.com/fights
+
 ## Unsolved Problems:
 * Getting Videos to upload to AWS
 * Getting Videos to render on APP
